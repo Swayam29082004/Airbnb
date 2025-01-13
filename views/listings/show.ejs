@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderluster - Listing Details</title>
+</head>
+<body>
+    <h3>Listing Details</h3>
+    <ul>
+        <li>Title: <%= listing.title || "Untitled Listing" %></li>
+        <li>Description: <%= listing.description || "Not available" %></li>
+        <li>Price: ₹ <%= listing.price ? listing.price.toLocaleString('en-IN') : "N/A" %></li>
+        <li>Location: <%= listing.location || "Not available" %></li>
+        <li>Country: <%= listing.country || "Not available" %></li>
+    </ul>
+    <br>
+    <a href="/listing/<%=listing._id%>/edit">
+        Edit this Listing</a>
+
+    </a><br>
+    <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    
+</body>
+</html>
