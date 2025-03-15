@@ -8,7 +8,7 @@
     </div>
 
     <div class="row justify-content-center mt-4">
-        <div class="card col-md-6 p-3 shadow-lg">
+        <div class="card col-md-6 p-3 shadow-lg listing-card">
             <img src="<%= listing.image.url || '/images/placeholder.png' %>"
                 class="card-img-top rounded show-img" alt="Listing Image">
             <div class="card-body">
@@ -48,9 +48,24 @@
             </form>
         <hr>
        
-        <h4>All the Reviews</h4>
-        <p><%=listing.reviews%></p>
-    
+        <p><b> All Reviews</b></p>
+        <div class="row">  
+            <% for (let review of listing.reviews) { %>  
+                <div class="card col-md-5 ms-3 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Doe</h5>
+                        <p class="card-text"><%= review.comment %></p>
+                        <p class="card-text"><%= review.rating %>stars</p>
+                    </div>
+                    <form  class="mb-2" method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id %>?_method=DELETE">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                    </form>
+                </div>
+            <% } %>  
+        </div>
+       
         </div>
     </div>
 </div>
+
+
