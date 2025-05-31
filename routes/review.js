@@ -1,38 +1,34 @@
 const express = require("express");
-const router = express.Router({ mergeParams: true });
-const wrapAsync = require('../utils/wrapAsync.js');
-const ExpressError = require("../utils/ExpressError.js");
-const Listing = require('../models/listing');
-const {reviewSchema } = require("../schema.js");
-const Review=require("../models/review.js")
+const router = express.Router(); // ✅ Initialize router
 
-const validateReview =(req,res,next) => {
-    let {error} = reviewSchema.validate(req.body);
-    if(error) {
-        let errorMsg = error.details.map((el) => el.message).join(",");
-        throw new ExpressError(400 , errorMsg);
-    } else {
-        next();
+const wrapAsync = require("../utils/wrapAsync.js");
+const { isLoggedIn, isReviewAuthor, validateReview } = require("../middleware.js");
+const Review = require("../models/review.js");
+const Listing = require("../models/listing.js");
+
+// Create Review
+router.post("/", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
+    let listing = await Listing.findById(req.params.id);
+    let newReview = new Review(req.body.review);
+    newReview.author = req.user._id;
+    if (!listing) {
+        req.flash("error", "Listing not found");
+        return res.redirect("/listings");
     }
-  }
-router.post("/", validateReview, wrapAsync(async (req, res) => {
-    console.log(req.params.id);
-    let listing = await Listing.findById(req.params.id); 
-    let newReview=new Review(req.body.review);
-    newReview.listing = listing; 
-    listing.reviews.push(newReview);
+    
     await newReview.save();
     await listing.save();
+    req.flash("success", "New review created");
     res.redirect(`/listings/${listing._id}`);
-  }));
-  
-  
-  // Delete  review Route
-  router.delete("/", wrapAsync(async (req, res) => {
+}));
+
+// Delete Review
+router.delete("/:reviewId", isLoggedIn, isReviewAuthor, wrapAsync(async (req, res) => {
     let { id, reviewId } = req.params;
     await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
     await Review.findByIdAndDelete(reviewId);
-    res.redirect(`/listings/${id}`)
-  })
-  );
-module.exports=router;
+    req.flash("success", "Review deleted successfully");
+    res.redirect(`/listings/${id}`);
+}));
+
+module.exports = router; // ✅ Ensure you export router

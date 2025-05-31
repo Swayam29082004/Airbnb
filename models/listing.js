@@ -1,52 +1,26 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Review =require("./review.js");
+
 const listingSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-        default: "Untitled Listing",
-    },
-       
-    description: {
-        type: String,
-    },
-    
-    image: {
-        url: {
-            type: String,
-            default: "https://media.istockphoto.com/id/1191376167/photo/island-villa.jpg?s=1024x1024&w=is&k=20&c=2iLa3jhrdiamX0lA9KdxYhCxGFJ65wLXCd-B48Eec4E=", // Default image URL
-            set: (v) => (v === "" ? "https://media.istockphoto.com/id/1191376167/photo/island-villa.jpg?s=1024x1024&w=is&k=20&c=2iLa3jhrdiamX0lA9KdxYhCxGFJ65wLXCd-B48Eec4E=" : v),
-        },
-        filename: {
-            type: String,
-            default: "", // Default filename
-        },
-    },
-    
-    price: {
-        type: Number,
-        default: 0, // Default price is 0
-    },
-    
-    location: {
-        type: String,
-    },
-    country: {
-        type: String,
-    },
-    reviews:[{
-        type:Schema.Types.ObjectId,
-        ref:"Review"
-    },
-    ]
-    
+  title: String,
+  description: String,
+  price: Number,
+  location: String,
+  country: String,
+  image: {
+    url: String,
+    filename: String
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User' // Ensure this matches your User model
+  },
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Review'
+    }
+  ]
 });
 
-listingSchema.post("findOneAndDelete",async(listing)=>{
-    if(listing){
-        await Review.deleteMany({reviews:{$in:listing.reviews}});
-    }
-});
-const Listing=mongoose.model('Listing',listingSchema)
-module.exports = Listing;
+module.exports = mongoose.model('Listing', listingSchema);
