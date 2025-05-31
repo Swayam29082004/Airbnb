@@ -17,6 +17,8 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter=require("./routes/user.js")
 const app = express();
 
+
+
 // Connect to MongoDB
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/wonderlust');
@@ -32,6 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.set('layout', 'layouts/boilerplate'); // Set default layout
 app.use(express.static(path.join(__dirname, '/public')));
+
 const sessionOptions={
   secret: 'mysuperscreencode',
   resave: false,
