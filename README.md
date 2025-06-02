@@ -35,26 +35,30 @@ Wonderlust is a full-stack travel listings web application built using **Node.js
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/wonderlust.git
-   cd wonderlust
+   git clone https://github.com/Swayam29082004/Airbnb
+   nodmon app.js
+```bash
 project-root/
 │
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   └── server.js
+├── backend/                  # Express backend
+│   ├── controllers/          # Route logic & controller files
+│   ├── models/               # Mongoose schemas and data models
+│   ├── routes/               # API route definitions
+│   ├── middleware/           # Auth and error-handling middleware
+│   └── server.js             # Main server file
 │
-├── frontend/
-│   ├── public/
+├── frontend/                 # React frontend
+│   ├── public/               # Static assets (index.html, icons, etc.)
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── App.js
-│   │   └── index.js
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/            # Main page components / views
+│   │   ├── App.js            # Main App component
+│   │   └── index.js          # React DOM entry point
 │
-├── README.md
-└── .gitignore
-##📝 License
--   This project is licensed under the MIT License - see the LICENSE file for details.
+├── .gitignore                # Git ignored files and folders
+├── README.md                 # Project documentation
+└── package.json              # Project metadata and scripts (or two if split frontend/backend)
+
+
+## 📝 License
+|  This project is licensed under the MIT License - see the LICENSE file for details.|
