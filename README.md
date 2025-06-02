@@ -50,6 +50,17 @@ This project includes several views that represent different sections of the app
 - **Validation**: Joi
 - **Utilities**: method-override, connect-flash
 
+## ✅ Future Enhancements
+- 🌐 **Google Maps API for Geolocation**  
+  Integrate Google Maps to display and select listing locations.
+- 📸 **Image Upload with Cloudinary Integration**  
+  Allow users to upload listing images using Cloudinary's image hosting service.
+- 🌟 **Ratings System**  
+  Implement a star-based rating system for listings and reviews.
+- 📅 **Booking Calendar**  
+  Add calendar support to book or reserve dates for listings.
+- 🧪 **Test Coverage with Jest or Mocha**  
+  Ensure application reliability and functionality through unit and integration testing.
 ## 📦 Installation
 
 1. **Clone the repository**:
@@ -125,17 +136,7 @@ project-root/
 └── schema.js                    # Joi validation schemas
 ```
 
-## ✅ Future Enhancements
-- 🌐 **Google Maps API for Geolocation**  
-  Integrate Google Maps to display and select listing locations.
-- 📸 **Image Upload with Cloudinary Integration**  
-  Allow users to upload listing images using Cloudinary's image hosting service.
-- 🌟 **Ratings System**  
-  Implement a star-based rating system for listings and reviews.
-- 📅 **Booking Calendar**  
-  Add calendar support to book or reserve dates for listings.
-- 🧪 **Test Coverage with Jest or Mocha**  
-  Ensure application reliability and functionality through unit and integration testing.
+
 
 ## 📝 License
 |  This project is licensed under the MIT License - see the LICENSE file for details.|
