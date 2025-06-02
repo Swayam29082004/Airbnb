@@ -60,25 +60,64 @@ This project includes several views that represent different sections of the app
 ```bash
 project-root/
 │
-├── backend/                  # Express backend
-│   ├── controllers/          # Route logic & controller files
-│   ├── models/               # Mongoose schemas and data models
-│   ├── routes/               # API route definitions
-│   ├── middleware/           # Auth and error-handling middleware
-│   └── server.js             # Main server file
+├── controllers/                  # Route logic & controllers
+│   ├── listing.js
+│   └── user.js
 │
-├── frontend/                 # React frontend
-│   ├── public/               # Static assets (index.html, icons, etc.)
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Main page components / views
-│   │   ├── App.js            # Main App component
-│   │   └── index.js          # React DOM entry point
+├── init/
+│   └── data.js                   # Sample data or DB seed logic
 │
-├── .gitignore                # Git ignored files and folders
-├── README.md                 # Project documentation
-└── package.json              # Project metadata and scripts (or two if split frontend/backend)
-
+├── models/                       # Mongoose data models
+│   ├── index.js
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── node_modules/                # Node.js dependencies (auto-generated)
+│
+├── public/                      # Public static files
+│   ├── css/
+│   └── js/
+│
+├── routes/                      # Express route handlers
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── screenshots/                 # Screenshots for documentation/demo
+│   ├── screenshot1.png
+│   ├── screenshot2.png
+│   ├── screenshot3.png
+│   └── screenshot4.png
+│
+├── utils/                       # Utility functions and error handlers
+│   ├── ExpressError.js
+│   └── wrapAsync.js
+│
+├── views/                       # EJS views/templates
+│   ├── includes/
+│   │   ├── flash.ejs
+│   │   ├── footer.ejs
+│   │   └── navbar.ejs
+│   ├── layouts/
+│   │   └── boilerplate.ejs
+│   ├── listings/
+│   │   ├── edit.ejs
+│   │   ├── error.ejs
+│   │   ├── index.ejs
+│   │   ├── new.ejs
+│   │   └── show.ejs
+│   └── user/
+│       ├── login.ejs
+│       └── signup.ejs
+│
+├── .gitignore                   # Git ignored files
+├── app.js                       # Main Express application
+├── middleware.js                # Custom middleware
+├── package.json                 # Project metadata and scripts
+├── package-lock.json            # Exact versions of installed dependencies
+├── README.md                    # Project documentation
+└── schema.js                    # Joi validation schemas
 
 ## 📝 License
 |  This project is licensed under the MIT License - see the LICENSE file for details.|
