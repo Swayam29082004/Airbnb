@@ -10,9 +10,25 @@ Wonderlust is a full-stack travel listings web application built using **Node.js
 
 This project includes several views that represent different sections of the application.
 
-| ![Dashboard](screenshots/screenshot1.png) | ![Data View](screenshots/screenshot2.png) | ![Reports](screenshots/screenshot3.png) | ![Settings](screenshots/screenshot4.png) |
+<div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot1.png" alt="Dashboard" style="border: 3px solid #ddd; padding: 5px; border-radius: 5px; width: 250px;" />
+    <p><strong>Dashboard</strong></p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot2.png" alt="Data View" style="border: 3px solid #ddd; padding: 5px; border-radius: 5px; width: 250px;" />
+    <p><strong>Data View</strong></p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot3.png" alt="Reports" style="border: 3px solid #ddd; padding: 5px; border-radius: 5px; width: 250px;" />
+    <p><strong>Reports</strong></p>
+  </div>
+  <div style="text-align: center;">
+    <img src="screenshots/screenshot4.png" alt="Settings" style="border: 3px solid #ddd; padding: 5px; border-radius: 5px; width: 250px;" />
+    <p><strong>Settings</strong></p>
+  </div>
+</div>
 
----
 
 ## 🚀 Features
 
