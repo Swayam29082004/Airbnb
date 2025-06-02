@@ -1,19 +1,19 @@
 # 🌍 Wonderlust
 
-Wonderlust is a full-stack travel listings web application built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **Passport.js**. Users can register, login, and create, edit, or delete travel listings with reviews.
+Wonderlust is a full-stack travel listings web application built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **Passport.js**. Users can register, log in, and create, edit, or delete travel listings with reviews.
+
 ---
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
-# Project Dashboard
+### Project Dashboard
 
 This project includes several views that represent different sections of the application.
+
 | ![Dashboard](screenshots/screenshot1.png) | ![Data View](screenshots/screenshot2.png) | ![Reports](screenshots/screenshot3.png) | ![Settings](screenshots/screenshot4.png) |
 
-
 ---
+
 ## 🚀 Features
 
 - 📝 Create, read, update, and delete travel listings.
@@ -35,9 +35,10 @@ This project includes several views that represent different sections of the app
 
 ## 📦 Installation
 
-1. **Clone the repository**
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/Swayam29082004/Airbnb
+   cd Airbnb
    nodmon app.js
    
 ```bash
