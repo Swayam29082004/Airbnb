@@ -7,7 +7,7 @@ Wonderlust is a full-stack travel listings web application built using **Node.js
 
 | Dashboard View | Data View | Reports | Settings |
 |----------------|-----------|---------|----------|
-| ![Dashboard](./screenshots/screenshot1.png) | ![Data View](./screenshots/screenshot2.png) | ![Reports](./screenshots/screenshot3.png) | ![Settings](./screenshots/screenshot4.png) |
+| ![Dashboard](E:\Coding\Apna collage\W3\MAJORAPROJ\screenshots\screenshot1.png.png) | ![Data View](./screenshots/screenshot2.png) | ![Reports](./screenshots/screenshot3.png) | ![Settings](./screenshots/screenshot4.png) |
 
 > Make sure to replace the above image paths with your actual screenshot filenames or GitHub image URLs.
 
