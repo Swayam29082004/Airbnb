@@ -7,11 +7,13 @@ Wonderlust is a full-stack travel listings web application built using **Node.js
 
 ## 📸 Screenshots
 
+# Project Dashboard
+
+This project includes several views that represent different sections of the application.
+
 | Dashboard View | Data View | Reports | Settings |
 |----------------|-----------|---------|----------|
-| ![Dashboard](E:\Coding\Apna collage\W3\Airbnb\screenshots\screenshot1.png) | ![Data View](E:\Coding\Apna collage\W3\Airbnb\screenshots\screenshot2.png) | ![Reports](E:\Coding\Apna collage\W3\Airbnb\screenshots\screenshot3.png) | ![Settings](E:\Coding\Apna collage\W3\Airbnb\screenshots\screenshot4.png) |
-
-
+| ![Alt text](screenshots\screenshot1.png) | ![Data View](screenshots/screenshot2.png) | ![Reports](screenshots/screenshot3.png) | ![Settings](screenshots/screenshot4.png) |
 
 
 ---
