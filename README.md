@@ -56,6 +56,10 @@ This project includes several views that represent different sections of the app
    ```bash
    git clone https://github.com/Swayam29082004/Airbnb
    cd Airbnb
+   npm install
+   DB_URL=mongodb://localhost:27017/wonderlust
+   SECRET=your_secret_key
+   node init/data.js
    nodmon app.js
    
 ```bash
@@ -119,6 +123,23 @@ project-root/
 ├── package-lock.json            # Exact versions of installed dependencies
 ├── README.md                    # Project documentation
 └── schema.js                    # Joi validation schemas
+
+## ✅ Future Enhancements
+
+- 🌐 **Google Maps API for Geolocation**  
+  Integrate Google Maps to display and select listing locations.
+
+- 📸 **Image Upload with Cloudinary Integration**  
+  Allow users to upload listing images using Cloudinary's image hosting service.
+
+- 🌟 **Ratings System**  
+  Implement a star-based rating system for listings and reviews.
+
+- 📅 **Booking Calendar**  
+  Add calendar support to book or reserve dates for listings.
+
+- 🧪 **Test Coverage with Jest or Mocha**  
+  Ensure application reliability and functionality through unit and integration testing.
 
 ## 📝 License
 |  This project is licensed under the MIT License - see the LICENSE file for details.|
