@@ -1,6 +1,7 @@
 # 🌍 Wonderlust
 
-Wonderlust is a full-stack travel listings web application built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **Passport.js**. Users can register, log in, and create, edit, or delete travel listings with reviews.
+Wonderlust is a full-stack travel listings web application built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **Passport.js**. Users can register, log in, and create, edit, or delete travel listings with reviews.Wonderlust is a full-stack travel listings web application that enables users to share, discover, and review amazing travel destinations around the world. Built using the Node.js ecosystem, Wonderlust follows the MVC architecture and provides robust features such as authentication, authorization, CRUD functionality, review system, and form validation — making it a comprehensive platform for travel enthusiasts.
+
 
 ---
 
