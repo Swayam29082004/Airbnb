@@ -123,6 +123,7 @@ project-root/
 ├── package-lock.json            # Exact versions of installed dependencies
 ├── README.md                    # Project documentation
 └── schema.js                    # Joi validation schemas
+```
 
 ## ✅ Future Enhancements
 - 🌐 **Google Maps API for Geolocation**  
