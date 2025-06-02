@@ -12,20 +12,20 @@ This project includes several views that represent different sections of the app
 
 <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
   <div style="text-align: center;">
-    <img src="screenshots/screenshot1.png" alt="Dashboard" style="border: 5px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
+    <img src="screenshots/screenshot1.png" alt="Dashboard" style="border: 15px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
     <p><strong>Dashboard</strong></p>
   </div>
   <div style="text-align: center;">
-    <img src="screenshots/screenshot2.png" alt="Data View" style="border: 5px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
-    <p><strong>Data View</strong></p>
+    <img src="screenshots/screenshot2.png" alt="Main View" style="border: 15px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
+    <p><strong>Main View</strong></p>
   </div>
   <div style="text-align: center;">
-    <img src="screenshots/screenshot3.png" alt="Reports" style="border: 5px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
-    <p><strong>Reports</strong></p>
+    <img src="screenshots/screenshot3.png" alt="Sign up" style="border: 15px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
+    <p><strong>Sign up</strong></p>
   </div>
   <div style="text-align: center;">
-    <img src="screenshots/screenshot4.png" alt="Settings" style="border: 5px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
-    <p><strong>Settings</strong></p>
+    <img src="screenshots/screenshot4.png" alt="Settings" style="border: 15px solid #ddd; padding: 5px; border-radius: 5px; width: 550px;" />
+    <p><strong>Login </strong></p>
   </div>
 </div>
 
