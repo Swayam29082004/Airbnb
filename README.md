@@ -125,19 +125,14 @@ project-root/
 └── schema.js                    # Joi validation schemas
 
 ## ✅ Future Enhancements
-
 - 🌐 **Google Maps API for Geolocation**  
   Integrate Google Maps to display and select listing locations.
-
 - 📸 **Image Upload with Cloudinary Integration**  
   Allow users to upload listing images using Cloudinary's image hosting service.
-
 - 🌟 **Ratings System**  
   Implement a star-based rating system for listings and reviews.
-
 - 📅 **Booking Calendar**  
   Add calendar support to book or reserve dates for listings.
-
 - 🧪 **Test Coverage with Jest or Mocha**  
   Ensure application reliability and functionality through unit and integration testing.
 
