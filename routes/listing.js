@@ -4,6 +4,7 @@ const wrapAsync = require('../utils/wrapAsync.js');
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingController = require('../controllers/listings.js');
 
+
 // Get all listings
 router.get('/', wrapAsync(listingController.index));
 
@@ -15,7 +16,7 @@ router.get('/:id', wrapAsync(listingController.showListing));
 
 
 // Create New Listing
-router.post('/', isLoggedIn, validateListing, wrapAsync(listingController.createListing));
+router.post('/', isLoggedIn ,validateListing, wrapAsync(listingController.createListing));
 
 // Edit Listing Form
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEdit));

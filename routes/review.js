@@ -9,17 +9,20 @@ const Listing = require("../models/listing.js");
 // Create Review
 router.post("/", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
     let listing = await Listing.findById(req.params.id);
-    let newReview = new Review(req.body.review);
-    newReview.author = req.user._id;
-    if (!listing) {
-        req.flash("error", "Listing not found");
-        return res.redirect("/listings");
-    }
+    // let newReview = new Review(req.body.review);
+    // newReview.author = req.user._id;
+    // console.log(newReview);
+    console.log(req.param.id);
     
-    await newReview.save();
-    await listing.save();
-    req.flash("success", "New review created");
-    res.redirect(`/listings/${listing._id}`);
+    // // if (!listing) {
+    // //     req.flash("error", "Listing not found");
+    // //     return res.redirect("/listings");
+    // // }
+    // listing.reviews.push(newReview);
+    // await newReview.save();
+    // await listing.save();
+    // req.flash("success", "New review created");
+    // res.redirect(`/listings/${listing._id}`);
 }));
 
 // Delete Review

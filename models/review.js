@@ -10,7 +10,7 @@ const reviewSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now, // Removed the parentheses to pass the function reference
+        default: Date.now(),  // Removed the parentheses to pass the function reference
     },
     author:{
         type: Schema.Types.ObjectId,
