@@ -1,6 +1,5 @@
 const express = require("express");
-const router = express.Router(); // ✅ Initialize router
-
+const router = express.Router({ mergeParams: true }); // ✅ Initialize router with mergeParams: true
 const wrapAsync = require("../utils/wrapAsync.js");
 const { isLoggedIn, isReviewAuthor, validateReview } = require("../middleware.js");
 const Review = require("../models/review.js");
@@ -9,20 +8,19 @@ const Listing = require("../models/listing.js");
 // Create Review
 router.post("/", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
     let listing = await Listing.findById(req.params.id);
-    // let newReview = new Review(req.body.review);
-    // newReview.author = req.user._id;
-    // console.log(newReview);
-    console.log(req.param.id);
+    let newReview = new Review(req.body.review);
+    newReview.author = req.user._id;
     
-    // // if (!listing) {
-    // //     req.flash("error", "Listing not found");
-    // //     return res.redirect("/listings");
-    // // }
-    // listing.reviews.push(newReview);
-    // await newReview.save();
-    // await listing.save();
-    // req.flash("success", "New review created");
-    // res.redirect(`/listings/${listing._id}`);
+    
+    if (!listing) {
+        req.flash("error", "Listing not found");
+        return res.redirect("/listings");
+    }
+    listing.reviews.push(newReview);
+    await newReview.save();
+    await listing.save();
+    req.flash("success", "New review created");
+    res.redirect(`/listings/${listing._id}`);
 }));
 
 // Delete Review
