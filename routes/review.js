@@ -10,9 +10,7 @@ router.post("/", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
     let listing = await Listing.findById(req.params.id);
     let newReview = new Review(req.body.review);
     newReview.author = req.user._id;
-    
-    
-    if (!listing) {
+        if (!listing) {
         req.flash("error", "Listing not found");
         return res.redirect("/listings");
     }
