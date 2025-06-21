@@ -1,1 +1,8 @@
+# Ignore node modules
 node_modules/
+
+# Ignore environment variable files
+.env
+
+# Ignore cloud configuration file
+.cloudConfig.js

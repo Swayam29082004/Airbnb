@@ -26,6 +26,24 @@
           <label for="image" class="form-label">Upload New Iamge</label>
           <input id="image" name="listing[image]" type="file" class="form-control">
         </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select id="category" name="listing[category]" class="form-select" required>
+            <option disabled>Select category</option>
+            <option value="Apartments" <%= listing.category === 'Apartments' ? 'selected' : '' %>>Apartments</option>
+            <option value="Trending" <%= listing.category === 'Trending' ? 'selected' : '' %>>Trending</option>
+            <option value="Rooms" <%= listing.category === 'Rooms' ? 'selected' : '' %>>Rooms</option>
+            <option value="Beach" <%= listing.category === 'Beach' ? 'selected' : '' %>>Beach</option>
+            <option value="Mountain" <%= listing.category === 'Mountain' ? 'selected' : '' %>>Mountain</option>
+            <option value="City" <%= listing.category === 'City' ? 'selected' : '' %>>City</option>
+            <option value="Pet Friendly" <%= listing.category === 'Pet Friendly' ? 'selected' : '' %>>Pet Friendly</option>
+            <option value="Pool" <%= listing.category === 'Pool' ? 'selected' : '' %>>Pool</option>
+            <option value="Castles" <%= listing.category === 'Castles' ? 'selected' : '' %>>Castles</option>
+            <option value="Resorts" <%= listing.category === 'Resorts' ? 'selected' : '' %>>Resorts</option>
+          </select>
+          <div class="invalid-feedback">Please select a category.</div>
+        </div>
+        
 
         <div class="row">
           <div class="mb-3 col-md-4">

@@ -17,7 +17,7 @@
                 <p class="card-text">
                     <i>Owned by: <%= listing.owner.username %></i><br>
                     <strong>Description:</strong> <%= listing.description || "Not available" %><br>
-                    
+                    <strong>Category:</strong> <%= listing.category || "Not specified" %><br>
                     <strong>Price:</strong> ₹ <%= listing.price ? listing.price.toLocaleString('en-IN') : "N/A" %><br>
                     <strong>Location:</strong> <%= listing.location || "Not available" %>, 
                     <%= listing.country || "Not available" %>
