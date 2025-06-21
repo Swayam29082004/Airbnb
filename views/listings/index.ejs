@@ -1,76 +1,61 @@
 <% layout('layouts/boilerplate') %>
 
 <style>
-    #filters{
-       display: flex;
-       flex-wrap:wrap ;
-       
+    #filters {
+      display: flex;
+      flex-wrap: wrap;
     }
-    .filters{
+    .filters {
       text-align: center;
-      margin-right: 2rem; 
-      /* margin-top: 0.5rem;  */
+      margin-right: 2rem;
       opacity: 0.7;
+      text-decoration: none;
+      color: inherit;
     }
-    .filters:hover{
-        opacity:1 ;
-        cursor: pointer;
+    .filters:hover {
+      opacity: 1;
+      cursor: pointer;
     }
-    .filters p{
-        font-size: 0.8rem;
+    .filters p {
+      font-size: 0.8rem;
     }
-</style>
-<div id="filters">
-    <div class="filters">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-water"></i></div>
-        <p>Beach</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-mountain-sun"></i></div>
-        <p>Mountain</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-tree"></i></div>
-        <p>Nature</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-city"></i></div>
-        <p>City</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-dog"></i></div>
-        <p>Pet Friendly</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Pool</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-chess-rook"></i></div>
-        <p>Castles</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-umbrella-beach"></i></div>
-        <p>Resorts</p>
-    </div>
-    <div class="filters">
-        <div><i class="fa-solid fa-building"></i></div>
-        <p>Apartments</p>
-    </div>
-        
-</div>
+    .active-filter {
+      opacity: 1 !important;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+  
+  <div id="filters">
+    <% const categories = [
+      { name: "Trending", icon: "fa-fire" },
+      { name: "Rooms", icon: "fa-bed" },
+      { name: "Beach", icon: "fa-water" },
+      { name: "Mountain", icon: "fa-mountain-sun" },
+      { name: "Nature", icon: "fa-tree" },
+      { name: "City", icon: "fa-city" },
+      { name: "Pet Friendly", icon: "fa-dog" },
+      { name: "Pool", icon: "fa-person-swimming" },
+      { name: "Camping", icon: "fa-campground" },
+      { name: "Castles", icon: "fa-chess-rook" },
+      { name: "Resorts", icon: "fa-umbrella-beach" },
+      { name: "Apartments", icon: "fa-building" },
+    ]; %>
+  
+    <!-- "All" filter -->
+    <a href="/listings" class="filters <%= !selectedCategory ? 'active-filter' : '' %>">
+      <div><i class="fa-solid fa-bars"></i></div>
+      <p>All</p>
+    </a>
+  
+    <% for (let cat of categories) { %>
+      <a href="/listings?category=<%= cat.name %>" class="filters <%= selectedCategory === cat.name ? 'active-filter' : '' %>">
+        <div><i class="fa-solid <%= cat.icon %>"></i></div>
+        <p><%= cat.name %></p>
+      </a>
+    <% } %>
+  </div>
+  
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
     <% for (let listing of allListings) { %>
