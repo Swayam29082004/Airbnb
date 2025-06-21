@@ -3,28 +3,25 @@ const router = express.Router({ mergeParams: true });
 const wrapAsync = require('../utils/wrapAsync.js');
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingController = require('../controllers/listings.js');
+const multer  = require('multer')
+const { storage } = require('../cloudConfig.js');
+const upload = multer({storage })
 
+// Index and Create
+router.route("/")
+    .get(wrapAsync(listingController.index))
+    .post(isLoggedIn,  upload.single('listing[image]'),validateListing,wrapAsync(listingController.createListing));
 
-// Get all listings
-router.get('/', wrapAsync(listingController.index));
+// New Listing Form
+router.get("/new", isLoggedIn, listingController.renderNewForm);
 
-// Create New Listing Form
-router.get('/new', isLoggedIn, listingController.renderNewForm);
-
-// View Single Listing
-router.get('/:id', wrapAsync(listingController.showListing));
-
-
-// Create New Listing
-router.post('/', isLoggedIn ,validateListing, wrapAsync(listingController.createListing));
+// Show, Update, Delete
+router.route("/:id")
+    .get(wrapAsync(listingController.showListing))
+    .put(isLoggedIn, isOwner, upload.single('listing[image]'),validateListing, wrapAsync(listingController.updateListing))
+    .delete(isLoggedIn, isOwner, wrapAsync(listingController.destoryListing));
 
 // Edit Listing Form
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEdit));
-
-// Update Listing
-router.put('/:id', isLoggedIn, isOwner, validateListing, wrapAsync(listingController.updateListing));
-
-// Delete Listing
-router.delete('/:id', isLoggedIn, isOwner, wrapAsync(listingController.deleteListing));
 
 module.exports = router;

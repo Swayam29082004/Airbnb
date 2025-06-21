@@ -13,14 +13,25 @@ const listingSchema = new Schema({
   },
   owner: {
     type: Schema.Types.ObjectId,
-    ref: 'User' // Ensure this matches your User model
+    ref: 'User'
   },
   reviews: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Review'
     }
-  ]
+  ],
+  geometry: {
+    type: {
+      type: String,
+      enum: ['Point'], // GeoJSON type
+      required: true
+    },
+    coordinates: {
+      type: [Number], // [longitude, latitude]
+      required: true
+    },
+  }
 });
 
 module.exports = mongoose.model('Listing', listingSchema);
