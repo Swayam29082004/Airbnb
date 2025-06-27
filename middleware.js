@@ -29,9 +29,9 @@ module.exports.isOwner=async (req,res,next)=>{
   next();
 }
 module.exports.validateListing = (req, res, next) => {
-  // if (!req.body.listing) {
-  //   return next(new ExpressError(400, "Invalid listing data."));
-  // }
+  if (!req.body.listing) {
+    return next(new ExpressError(400, "Invalid listing data."));
+  }
 
   const { error } = listingSchema.validate(req.body);
   if (error) {
